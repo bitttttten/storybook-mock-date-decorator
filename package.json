@@ -1,0 +1,16 @@
+{
+  "name": "storybook-mock-date-decorator",
+  "author": "bitttttten",
+  "version": "1.0.0",
+  "description": "Storybook MockDate decorator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@storybook/addons": "^6.4.19",
+    "mockdate": "^3.0.5"
+  }
+}
