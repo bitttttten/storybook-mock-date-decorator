@@ -26,7 +26,18 @@ Once the decorator has been added to your storybook, you can configure the date 
 
 ## Usage
 
-The syntax here is valid for storybook@6. You may want to check the [official docs](https://storybook.js.org/basics/writing-stories/) if you are on a different version.
+The syntax here is valid for each respective Storybook version. You may want to check the [official docs](https://storybook.js.org/basics/writing-stories/) if you are on a different version or a new one has come out since the last update.
+
+### Storybook 7
+
+```js
+// .storybook/preview.js
+import { mockDateDecorator } from "storybook-mock-date-decorator";
+
+export let decorators = [mockDateDecorator];
+```
+
+### Storybook 6
 
 ```js
 // .storybook/preview.js
