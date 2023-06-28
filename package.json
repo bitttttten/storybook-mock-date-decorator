@@ -1,7 +1,7 @@
 {
   "name": "storybook-mock-date-decorator",
   "author": "bitttttten",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook MockDate decorator",
   "main": "index.js",
   "scripts": {
