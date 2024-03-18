@@ -11,7 +11,9 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "@storybook/addons": "^6.4.19",
     "mockdate": "^3.0.5"
+  },
+  "peerDependencies": {
+    "@storybook/addons": ">=6"
   }
 }
