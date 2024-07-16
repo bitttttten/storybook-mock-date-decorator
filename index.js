@@ -1,4 +1,4 @@
-import { makeDecorator } from "@storybook/addons";
+import { makeDecorator } from "@storybook/preview-api";
 import MockDate from "mockdate";
 
 export const mockDateDecorator = makeDecorator({
