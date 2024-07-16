@@ -9,7 +9,7 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Github release version](https://img.shields.io/github/tag/bitttttten/storybook-mock-date-decorator.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/releases)
-[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v1.0.0.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v1.0.0...main)
+[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v1.0.3.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v1.0.3...main)
 [![npm release version](https://img.shields.io/npm/v/storybook-mock-date-decorator.svg)](https://www.npmjs.com/package/storybook-mock-date-decorator)
 
 </div>
@@ -28,11 +28,20 @@ Once the decorator has been added to your storybook, you can configure the date 
 
 The syntax here is valid for each respective Storybook version. You may want to check the [official docs](https://storybook.js.org/basics/writing-stories/) if you are on a different version or a new one has come out since the last update.
 
-### Storybook 7
+### Storybook 8
 
 ```js
 // .storybook/preview.js
 import { mockDateDecorator } from "storybook-mock-date-decorator";
+
+export let decorators = [mockDateDecorator];
+```
+
+### Storybook 7
+
+```js
+// .storybook/preview.js
+import { mockDateDecorator } from "storybook-mock-date-decorator/legacy";
 
 export let decorators = [mockDateDecorator];
 ```
@@ -42,7 +51,7 @@ export let decorators = [mockDateDecorator];
 ```js
 // .storybook/preview.js
 import { addDecorator } from "@storybook/react";
-import { mockDateDecorator } from "storybook-mock-date-decorator";
+import { mockDateDecorator } from "storybook-mock-date-decorator/legacy";
 
 addDecorator(mockDateDecorator);
 ```

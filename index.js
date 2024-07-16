@@ -1,14 +1,4 @@
 import { makeDecorator } from "@storybook/preview-api";
-import MockDate from "mockdate";
+import { decorator } from "./decorator";
 
-export const mockDateDecorator = makeDecorator({
-  name: "withDate",
-  parameterName: "date",
-  wrapper: (storyFn, context, { parameters: date }) => {
-    MockDate.reset();
-    if (date instanceof Date) {
-      MockDate.set(date);
-    }
-    return storyFn(context);
-  },
-});
+export const mockDateDecorator = decorator(makeDecorator);
