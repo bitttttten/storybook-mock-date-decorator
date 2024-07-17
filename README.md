@@ -50,9 +50,15 @@ export default preview;
 ```
 
 ```js
-// my-story.js
+// stories/Button.stories.js
 
-// .. Button setup here
+export default {
+  title: 'Example/Button',
+  component: Button,
+  parameters: {
+    date: new Date(1999, 10, 24),
+  },
+};
 
 export const Primary = {
   args: {
