@@ -9,7 +9,7 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Github release version](https://img.shields.io/github/tag/bitttttten/storybook-mock-date-decorator.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/releases)
-[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v2.0.4.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v2.0.4...main)
+[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v2.0.5.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v2.0.5...main)
 [![npm release version](https://img.shields.io/npm/v/storybook-mock-date-decorator.svg)](https://www.npmjs.com/package/storybook-mock-date-decorator)
 
 </div>
