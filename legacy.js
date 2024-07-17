@@ -1,4 +1,4 @@
 import { makeDecorator } from "@storybook/addons";
-import { generator } from "./decorator";
+import { decorator } from "./decorator";
 
-export const mockDateDecorator = generator(makeDecorator);
+export const mockDateDecorator = decorator(makeDecorator);
