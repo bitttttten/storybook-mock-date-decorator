@@ -3,13 +3,13 @@
  * @module storybook-mock-date-decorator
  */
 declare module "storybook-mock-date-decorator" {
-  import { MakeDecoratorResult } from "@storybook/preview-api";
+  import { makeDecorator } from "@storybook/preview-api";
   
   /**
    * Mock Date Decorator for Storybook v8
-   * @type {MakeDecoratorResult}
+   * @type {ReturnType<typeof makeDecorator>}
    */
-  export const mockDateDecorator: MakeDecoratorResult;
+  export const mockDateDecorator: ReturnType<typeof makeDecorator>;
 }
 
 /**
