@@ -9,7 +9,7 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Github release version](https://img.shields.io/github/tag/bitttttten/storybook-mock-date-decorator.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/releases)
-[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v2.0.2.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v2.0.2...main)
+[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v2.0.3.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v2.0.3...main)
 [![npm release version](https://img.shields.io/npm/v/storybook-mock-date-decorator.svg)](https://www.npmjs.com/package/storybook-mock-date-decorator)
 
 </div>
@@ -31,10 +31,38 @@ The syntax here is valid for each respective Storybook version. You may want to 
 ### Storybook 8
 
 ```js
-// .storybook/preview.js
 import { mockDateDecorator } from "storybook-mock-date-decorator";
 
-export let decorators = [mockDateDecorator];
+/** @type { import('@storybook/react').Preview } */
+const preview = {
+  decorators: [mockDateDecorator],
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+  },
+};
+
+export default preview;
+```
+
+```js
+// my-story.js
+
+// .. Button setup here
+
+export const Primary = {
+  args: {
+    primary: true,
+    label: 'Button',
+  },
+  parameters: {
+    date: new Date(2021, 1, 1),
+  }
+};
 ```
 
 ### Storybook 7
