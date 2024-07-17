@@ -1,6 +1,6 @@
 import MockDate from "mockdate";
 
-export const generator = makeDecorator => makeDecorator({
+export const decorator = makeDecorator => makeDecorator({
   name: "withDate",
   parameterName: "date",
   wrapper: (storyFn, context, { parameters: date }) => {
