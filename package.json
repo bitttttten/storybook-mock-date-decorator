@@ -3,12 +3,20 @@
   "author": "bitttttten",
   "version": "2.0.5",
   "description": "Storybook MockDate decorator",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitttttten/storybook-mock-date-decorator.git"
   },
+  "main": "index.js",
   "types": "types.d.ts",
-  "keywords": [],
+  "keywords": [
+    "storybook",
+    "addon",
+    "mockdate",
+    "decorator",
+    "date",
+    "time"
+  ],
   "license": "ISC",
   "dependencies": {
     "mockdate": "^3.0.5"
