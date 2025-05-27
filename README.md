@@ -9,16 +9,26 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Github release version](https://img.shields.io/github/tag/bitttttten/storybook-mock-date-decorator.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/releases)
-[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v2.0.5.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v2.0.5...main)
+[![Commits since release](https://img.shields.io/github/commits-since/bitttttten/storybook-mock-date-decorator/v3.0.0.svg)](https://github.com/bitttttten/storybook-mock-date-decorator/compare/v3.0.0...main)
 [![npm release version](https://img.shields.io/npm/v/storybook-mock-date-decorator.svg)](https://www.npmjs.com/package/storybook-mock-date-decorator)
 
 </div>
 
 ## Install
 
+### For Storybook 9.0+
+
 ```sh
-npm i storybook-mock-date-decorator
+npm i storybook-mock-date-decorator@3 -D
 ```
+
+### For Storybook 6, 7, or 8
+
+```sh
+npm i storybook-mock-date-decorator@2 -D
+```
+
+**Note:** If you're using Storybook 6, 7, or 8, you must use the `/legacy` import path. Please refer to the [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) for complete usage instructions.
 
 ## API
 
@@ -26,9 +36,7 @@ Once the decorator has been added to your storybook, you can configure the date 
 
 ## Usage
 
-The syntax here is valid for each respective Storybook version. You may want to check the [official docs](https://storybook.js.org/basics/writing-stories/) if you are on a different version or a new one has come out since the last update.
-
-### Storybook 8
+### Storybook 9
 
 ```js
 import { mockDateDecorator } from "storybook-mock-date-decorator";
@@ -70,24 +78,7 @@ export const Primary = {
 };
 ```
 
-### Storybook 7
-
-```js
-// .storybook/preview.js
-import { mockDateDecorator } from "storybook-mock-date-decorator/legacy";
-
-export let decorators = [mockDateDecorator];
-```
-
-### Storybook 6
-
-```js
-// .storybook/preview.js
-import { addDecorator } from "@storybook/react";
-import { mockDateDecorator } from "storybook-mock-date-decorator/legacy";
-
-addDecorator(mockDateDecorator);
-```
+## Story Examples
 
 Then inside your storybook, you can use the following code to mock/freeze the date for all stories of a component:
 
@@ -128,3 +119,13 @@ WithMockedDate.parameters = {
 }
 
 ```
+
+## Version Compatibility
+
+| Storybook Version | Package Version | Import Path | Documentation |
+|-------------------|-----------------|-------------|---------------|
+| 9.0+ | `@3` | `storybook-mock-date-decorator` | This README |
+| 8.x | `@2` | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
+| 6.x, 7.x | `@2` | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
+
+**Important:** For Storybook 6, 7, and 8, you must use the `/legacy` import path and follow the setup instructions in the [v2.x documentation](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md).
