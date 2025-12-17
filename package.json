@@ -1,7 +1,7 @@
 {
   "name": "@sidnioulz/storybook-mock-date-decorator",
   "author": "bitttttten",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Storybook MockDate decorator",
   "type": "module",
   "repository": {
