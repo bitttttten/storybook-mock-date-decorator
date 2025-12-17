@@ -1,0 +1,20 @@
+.date-label {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: wait;
+  display: inline-block;
+  line-height: 1;
+  font-size: 0.75 rem;
+  padding: 0.625em 1em;
+}
+.date-label--primary {
+  color: #222;
+  background-color: #fde31e;
+}
+.date-label--secondary {
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}

@@ -16,6 +16,12 @@
 
 ## Install
 
+### For Storybook 10.0+
+
+```sh
+npm i storybook-mock-date-decorator@4 -D
+```
+
 ### For Storybook 9.0+
 
 ```sh
@@ -36,6 +42,55 @@ Once the decorator has been added to your storybook, you can configure the date 
 
 ## Usage
 
+### Storybook 10
+
+Load the addon decorator:
+
+```ts
+// .storybook/main.ts
+
+export default {
+  stories: [/* ... */],
+  addons: [
+    "@storybook/addon-docs",
+    "storybook-mock-date-decorator", // add this here
+  ]
+}
+```
+
+Optionally, set a global date for all your stories:
+```ts
+// .storybook/preview.ts
+export default {
+  parameters: {
+    date: new Date('2025-06-01T00:00:00Z'),
+  },
+};
+```
+
+Or set the date on a per-component or per-story basis:
+```ts
+// stories/Button.stories.tsx
+
+export default {
+  title: 'Example/Button',
+  component: Button,
+  parameters: {
+    date: new Date(1999, 10, 24),
+  },
+};
+
+export const Primary = {
+  args: {
+    primary: true,
+    label: 'Button',
+  },
+  parameters: {
+    date: new Date(2021, 1, 1),
+  }
+};
+```
+
 ### Storybook 9
 
 ```js
@@ -44,13 +99,6 @@ import { mockDateDecorator } from "storybook-mock-date-decorator";
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   decorators: [mockDateDecorator],
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-      },
-    },
-  },
 };
 
 export default preview;
@@ -122,10 +170,11 @@ WithMockedDate.parameters = {
 
 ## Version Compatibility
 
-| Storybook Version | Package Version | Import Path | Documentation |
-|-------------------|-----------------|-------------|---------------|
-| 9.0+ | `@3` | `storybook-mock-date-decorator` | This README |
-| 8.x | `@2` | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
-| 6.x, 7.x | `@2` | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
+| Storybook Version | Package Version | Import Path                            | Documentation                                                                                    |
+| ----------------- | --------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 10.0+             | `@4`            | `storybook-mock-date-decorator`        | This README                                                                                      |
+| 9.0+              | `@3`            | `storybook-mock-date-decorator`        | [v3.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v3.0.0/README.md) |
+| 8.x               | `@2`            | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
+| 6.x, 7.x          | `@2`            | `storybook-mock-date-decorator/legacy` | [v2.x README](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md) |
 
 **Important:** For Storybook 6, 7, and 8, you must use the `/legacy` import path and follow the setup instructions in the [v2.x documentation](https://github.com/bitttttten/storybook-mock-date-decorator/blob/v2.0.6/README.md).

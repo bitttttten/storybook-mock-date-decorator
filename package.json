@@ -1,31 +1,114 @@
 {
-  "name": "storybook-mock-date-decorator",
+  "name": "@sidnioulz/storybook-mock-date-decorator",
   "author": "bitttttten",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Storybook MockDate decorator",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/bitttttten/storybook-mock-date-decorator.git"
   },
-  "main": "index.js",
-  "types": "types.d.ts",
   "keywords": [
+    "storybook-addon",
     "storybook",
     "addon",
+    "mock",
     "mockdate",
     "decorator",
     "date",
     "time"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./preview": {
+      "types": "./dist/preview.d.ts",
+      "default": "./dist/preview.js"
+    },
+    "./preset": "./dist/preset.js",
+    "./manager": "./dist/manager.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "prebuild": "node -e \"fs.rmSync('./dist', { recursive: true, force: true })\"",
+    "build": "tsup",
+    "build-storybook": "storybook build",
+    "build:watch": "npm run build -- --watch",
+    "format": "prettier --write .",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix",
+    "prerelease": "zx scripts/prepublish-checks.js",
+    "release": "npm run build && auto shipit",
+    "start": "run-p build:watch \"storybook --quiet\"",
+    "storybook": "storybook dev -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@storybook/addon-docs": "next",
+    "@storybook/icons": "^1.4.0",
+    "@storybook/react-vite": "next",
+    "@types/node": "^20",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.7.0",
+    "auto": "^11.3.0",
+    "boxen": "^8.0.1",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-storybook": "next",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "^3.6.2",
+    "prompts": "^2.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "next",
+    "ts-dedent": "^2.2.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.44.1",
+    "vite": "^7.0.5",
+    "zx": "^8.7.1"
+  },
   "dependencies": {
     "mockdate": "^3.0.5"
   },
   "peerDependencies": {
-    "storybook": "^9.0.0"
+    "storybook": "^10.0.0"
   },
-  "devDependencies": {
-    "storybook": ">=9.0.0-0 < 10.0.0-0"
+  "publishConfig": {
+    "access": "public"
+  },
+  "bundler": {
+    "managerEntries": [],
+    "previewEntries": [
+      "src/preview.ts",
+      "src/index.ts"
+    ],
+    "nodeEntries": []
+  },
+  "storybook": {
+    "displayName": "Mock Date Decorator",
+    "supportedFrameworks": [
+      "supported-frameworks"
+    ],
+    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "packageManager": "pnpm@10.0.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
