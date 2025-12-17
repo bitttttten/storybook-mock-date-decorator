@@ -6,7 +6,7 @@ import addonAnnotations from './preview';
 export default () =>
   definePreviewAddon<{
     parameters: {
-      date: Date;
+      date?: Date;
     };
   }>(addonAnnotations);
 
