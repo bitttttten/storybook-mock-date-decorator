@@ -1,5 +1,5 @@
 {
-  "name": "storybook-mock-date-decorator",
+  "name": "@sidnioulz/storybook-mock-date-decorator",
   "author": "bitttttten",
   "version": "3.0.0",
   "description": "Storybook MockDate decorator",
